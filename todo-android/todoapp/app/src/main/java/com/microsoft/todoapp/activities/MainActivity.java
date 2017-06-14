@@ -60,10 +60,10 @@ public class MainActivity extends AppCompatActivity {
                 mAdapter = new ArrayAdapter<>(this, R.layout.item_todo, R.id.task_title));
 
         updateUI();
-        java.util.Map<String, String> properties = new java.util.HashMap<>();
-        properties.put("event", "add");
-        Analytics.trackEvent("deleteTask",properties);
-        MobileCenter.start(getApplication(), "f69ec9a0-102b-4b92-a1c3-a41d9f6b24eb",
+        /*java.util.Map<String, String> properties = new java.util.HashMap<>();
+        properties.put("event", "add");*/
+        Analytics.trackEvent("deleteTask");
+        MobileCenter.start(getApplication(), "d6a7ead3-8e7f-45e8-a143-b282395c6d06",
                 Analytics.class, Crashes.class);
     }
 
