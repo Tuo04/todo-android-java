@@ -27,6 +27,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        MobileCenter.start(getApplication(), "d6a7ead3-8e7f-45e8-a143-b282395c6d06",
+                Analytics.class, Crashes.class);
+        Analytics.trackEvent("add_button");
+        Analytics.trackEvent("updateUI");
+        Analytics.trackEvent("onClick");
+        Analytics.trackEvent("deleteTask");
+        Analytics.trackEvent("task_delete");
         setContentView(R.layout.activity_main);
 
         findViewById(R.id.add_button).setOnClickListener(new View.OnClickListener() {
@@ -60,11 +68,9 @@ public class MainActivity extends AppCompatActivity {
                 mAdapter = new ArrayAdapter<>(this, R.layout.item_todo, R.id.task_title));
 
         updateUI();
-        java.util.Map<String, String> properties = new java.util.HashMap<>();
-        properties.put("event", "add");
-        Analytics.trackEvent("deleteTask",properties);
-        MobileCenter.start(getApplication(), "f69ec9a0-102b-4b92-a1c3-a41d9f6b24eb",
-                Analytics.class, Crashes.class);
+        /*java.util.Map<String, String> properties = new java.util.HashMap<>();
+        properties.put("event", "add");*/
+
     }
 
     private void saveTask(String task) {
@@ -81,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
         TextView taskTextView = (TextView) ((View) view.getParent()).findViewById(R.id.task_title);
         mHelper.deleteTask(String.valueOf(taskTextView.getText()));
         updateUI();
-        throw new Exception();
+        //throw new Exception();
     }
 
     private void updateUI() {
