@@ -27,12 +27,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        MobileCenter.start(getApplication(), "d6a7ead3-8e7f-45e8-a143-b282395c6d06",
+                Analytics.class, Crashes.class);
         Analytics.trackEvent("add_button");
         Analytics.trackEvent("updateUI");
         Analytics.trackEvent("onClick");
         Analytics.trackEvent("deleteTask");
-        MobileCenter.start(getApplication(), "d6a7ead3-8e7f-45e8-a143-b282395c6d06",
-                Analytics.class, Crashes.class);
+        Analytics.trackEvent("task_delete");
         setContentView(R.layout.activity_main);
 
         findViewById(R.id.add_button).setOnClickListener(new View.OnClickListener() {
