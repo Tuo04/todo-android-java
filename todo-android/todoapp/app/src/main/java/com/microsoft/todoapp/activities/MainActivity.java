@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Analytics.trackEvent("saveTask");
+        Analytics.trackEvent("add_button");
         Analytics.trackEvent("updateUI");
         Analytics.trackEvent("onClick");
         MobileCenter.start(getApplication(), "d6a7ead3-8e7f-45e8-a143-b282395c6d06",
