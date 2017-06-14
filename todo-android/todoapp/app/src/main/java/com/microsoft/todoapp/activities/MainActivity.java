@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         Analytics.trackEvent("add_button");
         Analytics.trackEvent("updateUI");
         Analytics.trackEvent("onClick");
+        Analytics.trackEvent("deleteTask");
         MobileCenter.start(getApplication(), "d6a7ead3-8e7f-45e8-a143-b282395c6d06",
                 Analytics.class, Crashes.class);
         setContentView(R.layout.activity_main);
@@ -84,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
         TextView taskTextView = (TextView) ((View) view.getParent()).findViewById(R.id.task_title);
         mHelper.deleteTask(String.valueOf(taskTextView.getText()));
         updateUI();
-        throw new Exception();
+        //throw new Exception();
     }
 
     private void updateUI() {
