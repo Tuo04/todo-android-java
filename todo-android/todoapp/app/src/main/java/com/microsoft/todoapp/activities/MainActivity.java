@@ -62,7 +62,8 @@ public class MainActivity extends AppCompatActivity {
         updateUI();
         /*java.util.Map<String, String> properties = new java.util.HashMap<>();
         properties.put("event", "add");*/
-        Analytics.trackEvent("deleteTask");
+        Analytics.trackEvent("saveTask");
+        Analytics.trackEvent("updateUI");
         MobileCenter.start(getApplication(), "d6a7ead3-8e7f-45e8-a143-b282395c6d06",
                 Analytics.class, Crashes.class);
     }
